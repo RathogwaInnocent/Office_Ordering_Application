@@ -164,8 +164,8 @@
         OnChange: =If(toggleMyOrders_EOS.Value = false, OrderHeader, Filter(OrderHeader, Email = User().Email))
         Size: =13
         TrueFill: =RGBA(164, 38, 44, 1)
-        X: =1228
-        Y: =159
+        X: =1181
+        Y: =151
         ZIndex: =16
 
     lblTitleID_EOS As label:
@@ -177,8 +177,8 @@
         Size: =13
         Text: ="ID"
         Width: =104
-        X: =45
-        Y: =147
+        X: =26
+        Y: =143
         ZIndex: =17
 
     lblTitleOrderDate_EOS As label:
@@ -190,8 +190,8 @@
         Size: =13
         Text: ="Date"
         Width: =114
-        X: =130
-        Y: =143
+        X: =90
+        Y: =139
         ZIndex: =18
 
     lblTitleItems_EOS As label:
@@ -202,8 +202,8 @@
         Size: =13
         Text: |-
             ="#Items"
-        X: =244
-        Y: =143
+        X: =204
+        Y: =139
         ZIndex: =19
 
     lblTitleAmount_EOS As label:
@@ -213,7 +213,7 @@
         FontWeight: =FontWeight.Bold
         Size: =13
         Text: ="Amount"
-        X: =394
+        X: =375
         Y: =143
         ZIndex: =20
 
@@ -224,7 +224,7 @@
         FontWeight: =FontWeight.Bold
         Size: =13
         Text: ="Status"
-        X: =546
+        X: =525
         Y: =143
         ZIndex: =21
 
@@ -235,7 +235,7 @@
         FontWeight: =FontWeight.Bold
         Size: =13
         Text: ="Notes"
-        X: =714
+        X: =708
         Y: =143
         ZIndex: =22
 
@@ -246,7 +246,7 @@
         FontWeight: =FontWeight.Bold
         Size: =13
         Text: ="My Orders"
-        X: =1067
-        Y: =153
+        X: =1031
+        Y: =143
         ZIndex: =23
 
