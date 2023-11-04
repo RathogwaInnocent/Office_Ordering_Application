@@ -1,0 +1,42 @@
+{
+  "1fd879fe-97cb-40d5-b4f1-98e522660d11": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3312/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://nortonrosefulbrightsa-my.sharepoint.com/personal/innocent_rathogwa_nortonrosefulbright_com": {
+        "dataSources": {
+          "Categories": {
+            "tableName": "4413f1d9-a163-4f24-bccc-ccce11ecd429"
+          },
+          "Items": {
+            "tableName": "569e924f-60c4-48fc-9772-36b4f768ed3b"
+          },
+          "OrderHeader": {
+            "tableName": "cde67a6b-171a-47a6-a0aa-0b370d0af6ac"
+          },
+          "OrderLines": {
+            "tableName": "b8ffeabe-dcbe-43e9-a4fb-511e060a8daa"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Categories",
+      "Items",
+      "OrderHeader",
+      "OrderLines"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1fd879fe-97cb-40d5-b4f1-98e522660d11"
+  }
+}

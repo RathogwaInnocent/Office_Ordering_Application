@@ -1,0 +1,174 @@
+"'Home Screen' As screen":
+    BackgroundImage: ='rm380-12'
+    Fill: =RGBA(234, 234, 234, 1)
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+    OnVisible: |-
+        =// show loading overlay
+        Set(varLoading, true);
+        // data refresh code
+        ClearCollect(colCategories, Categories);
+        ClearCollect(colItems, Items);
+        //reset confirmation form
+        NewForm(formConfirmation_NOS);
+        ResetForm(formConfirmation_NOS);
+        //hide loading overlay
+        Set(varLoading, false);
+
+    Image2 As image:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =651
+        Image: =supplies
+        RadiusBottomLeft: =100
+        RadiusBottomRight: =100
+        RadiusTopLeft: =100
+        RadiusTopRight: =100
+        Transparency: =0.5
+        Width: =693
+        X: =42
+        Y: =100
+        ZIndex: =6
+
+    grHeader_HS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        rectHeader_HS As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(164, 38, 44, 1)
+            Height: =114
+            Width: =1365
+            ZIndex: =1
+
+        lblHeaderLeft_HS As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =100
+            PaddingLeft: =55
+            Size: =30
+            Text: ="PLEASE MAKE CHOOSE A CHOICE"
+            Width: =974
+            ZIndex: =2
+
+        lblHeaderRight_HS As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingRight: =15
+            Size: =20
+            Text: ="Office Ordering Supplies App"
+            Width: =413
+            X: =950
+            ZIndex: =3
+
+        lblHeaderRightBottom_HS As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            PaddingRight: =15
+            Size: =20
+            Text: ="Hello " & User().FullName
+            Width: =390
+            X: =974
+            Y: =60
+            ZIndex: =4
+
+        icnHeader_HS As icon.Home:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate('Home Screen',ScreenTransition.Cover)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Visible: |
+                =false
+            Y: =18
+            ZIndex: =5
+
+    Button1_1 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =145
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        OnSelect: =Navigate('New Order Screen', ScreenTransition.CoverRight)
+        RadiusBottomLeft: =100
+        RadiusBottomRight: =100
+        RadiusTopLeft: =100
+        RadiusTopRight: =100
+        Size: =18
+        Text: ="CREATE NEW ORDER"
+        Width: =350
+        X: =844
+        Y: =212
+        ZIndex: =7
+
+    Button1_2 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =145
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        OnSelect: =Navigate('Existing Orders Screen', ScreenTransition.CoverRight)
+        RadiusBottomLeft: =100
+        RadiusBottomRight: =100
+        RadiusTopLeft: =100
+        RadiusTopRight: =100
+        Size: =18
+        Text: ="VIEW EXISTING ORDERS"
+        Width: =350
+        X: =844
+        Y: =451
+        ZIndex: =8
+
+    grLoading_HS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        lblLoading_HS As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(250, 250, 250, 0.9)
+            FontWeight: =FontWeight.Bold
+            Height: =768
+            Size: =50
+            Text: ="Loading..."
+            Visible: =varLoading
+            Width: =1366
+            ZIndex: =9
+
+        rectLoading_HS As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(250, 250, 250, 0.9)
+            Height: =765
+            Visible: =varLoading
+            Width: =1365
+            ZIndex: =10
+

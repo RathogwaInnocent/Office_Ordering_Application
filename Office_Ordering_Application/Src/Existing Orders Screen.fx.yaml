@@ -1,0 +1,252 @@
+"'Existing Orders Screen' As screen":
+    BackgroundImage: ='rm380-12'
+    Fill: =RGBA(234, 234, 234, 1)
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    galAllOrder_EOS As gallery.galleryVertical:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        BorderThickness: =2
+        DelayItemLoading: =true
+        Height: =541
+        Items: =If(toggleMyOrders_EOS.Value = false, OrderHeader, Filter(OrderHeader, Email = User().Email))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =108
+        Width: =1326
+        X: =20
+        Y: =193
+        ZIndex: =6
+
+        Label7 As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =28
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =ThisItem.ID
+            Width: =72
+            X: =8
+            Y: =8
+            ZIndex: =1
+
+        Label8 As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =ThisItem.OrderDate
+            X: =62
+            Y: =8
+            ZIndex: =2
+
+        Label9 As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =ThisItem.NumberOfItems
+            Width: =118
+            X: =212
+            Y: =8
+            ZIndex: =3
+
+        Label10 As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =ThisItem.TotalAmount
+            X: =355
+            Y: =8
+            ZIndex: =4
+
+        Label11 As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =ThisItem.Status
+            X: =505
+            Y: =8
+            ZIndex: =5
+
+        Label12 As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =74
+            OnSelect: =Select(Parent)
+            Size: =13
+            Text: =ThisItem.Notes
+            X: =677
+            Y: =8
+            ZIndex: =6
+
+    grHeader_EOS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        rectHeader_EOS As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(164, 38, 44, 1)
+            Height: =114
+            Width: =1365
+            ZIndex: =1
+
+        lblHeaderLeft_EOS As label:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =100
+            PaddingLeft: =55
+            Size: =30
+            Text: ="EXISTING ORDERS"
+            Width: =974
+            ZIndex: =2
+
+        lblHeaderRight_EOS As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingRight: =15
+            Size: =20
+            Text: ="Office ordering supplies app"
+            Width: =413
+            X: =950
+            ZIndex: =3
+
+        lblHeaderRightBottom_EOS As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            PaddingRight: =15
+            Size: =20
+            Text: ="Hello " & User().FullName
+            Width: =390
+            X: =974
+            Y: =60
+            ZIndex: =4
+
+        icnHeader_EOS As icon.Home:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(251, 251, 251, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate('Home Screen',ScreenTransition.Cover)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Y: =18
+            ZIndex: =5
+
+    toggleMyOrders_EOS As toggleSwitch:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        FalseFill: =RGBA(128, 130, 133, 1)
+        HandleFill: =RGBA(255, 255, 255, 1)
+        OnChange: =If(toggleMyOrders_EOS.Value = false, OrderHeader, Filter(OrderHeader, Email = User().Email))
+        Size: =13
+        TrueFill: =RGBA(164, 38, 44, 1)
+        X: =1228
+        Y: =159
+        ZIndex: =16
+
+    lblTitleID_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =36
+        Size: =13
+        Text: ="ID"
+        Width: =104
+        X: =45
+        Y: =147
+        ZIndex: =17
+
+    lblTitleOrderDate_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =13
+        Text: ="Date"
+        Width: =114
+        X: =130
+        Y: =143
+        ZIndex: =18
+
+    lblTitleItems_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =13
+        Text: |-
+            ="#Items"
+        X: =244
+        Y: =143
+        ZIndex: =19
+
+    lblTitleAmount_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =13
+        Text: ="Amount"
+        X: =394
+        Y: =143
+        ZIndex: =20
+
+    lblTitleStatus_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =13
+        Text: ="Status"
+        X: =546
+        Y: =143
+        ZIndex: =21
+
+    lblTitleNotes_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =13
+        Text: ="Notes"
+        X: =714
+        Y: =143
+        ZIndex: =22
+
+    lblTitleMyOrder_EOS As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =13
+        Text: ="My Orders"
+        X: =1067
+        Y: =153
+        ZIndex: =23
+
